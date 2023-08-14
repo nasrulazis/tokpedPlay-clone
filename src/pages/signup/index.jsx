@@ -18,7 +18,10 @@ const RegisterPage = () => {
         e.preventDefault()
         try {
         const response = await useAxios.post('/api/user/signup', { name, email, password, image }, {
-            withCredentials: true
+            withCredentials: true,
+            headers: {
+                'Content-Type': 'application/json',
+            },
         });
         // const token = response.data.token;
         // console.log('Logged in user:', response.data);

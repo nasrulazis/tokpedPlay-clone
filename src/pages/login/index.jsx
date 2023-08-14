@@ -16,7 +16,10 @@ const LoginPage = () => {
         e.preventDefault()
         try {
         const response = await useAxios.post('/api/user/login', { email, password }, {
-            withCredentials: true
+            withCredentials: true,
+            headers: {
+                'Content-Type': 'application/json',
+            },
         });
         // const token = response.data.token;
         // console.log('Logged in user:', response.data);
