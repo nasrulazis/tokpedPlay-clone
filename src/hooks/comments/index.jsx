@@ -4,7 +4,7 @@ import { io } from "socket.io-client";
 
 export const useComment = () => {
     const [error, setError] = useState(null);
-    const socket = io("http://localhost:3000");
+    const socket = io(import.meta.env.VITE_BASE_URL);
     const postComment = async (videosId, comment) => {
         setError(null);
         try {
